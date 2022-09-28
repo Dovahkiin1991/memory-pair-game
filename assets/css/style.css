@@ -23,31 +23,43 @@ html {
 .game-list__card {
     width: 140px;
     height: 140px;
-    border-radius: 10px;
-    border: 1px solid #000;
+    transform-style: preserve-3d;
     position: relative;
     transition: 0.6s;
-    transform-style: preserve-3d;
-    /* backface-visibility: hidden; */
+    cursor: pointer;
 }
 
-.game-list__card--flip {
+.game-list__card--front,
+.game-list__card--back {
+	backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+	position: absolute;
+	top: 0;
+	left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: 1px solid #000;
+    transition: 0.6s;
+}
+
+.game-list__card--front {
+    z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+    background-color: #ccc;
+}
+
+.game-list__card--back {
+    transform: rotateY(-180deg);
+}
+.game-list__item--show .game-list__card--front {
     transform: rotateY(180deg);
 }
 
-.game-list__type1 {
-    background: url('/assets/img/card1.jpg') no-repeat center center;
-    background-size: 90%;
-}
-
-.game-list__type2 {
-    background: url('/assets/img/card2.jpg') no-repeat center center;
-    background-size: 90%;
-}
-
-.game-list__type3 {
-    background: url('/assets/img/card3.jpg') no-repeat center center;
-    background-size: 90%;
+.game-list__item--show .game-list__card--back {
+    transform: rotateY(0deg);
 }
 
 @media (max-width: 767px) {
