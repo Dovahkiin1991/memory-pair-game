@@ -32,16 +32,11 @@
 
     let flippedCards = [];
     let matchCount = 0;
-    let board = document.createElement('div');
     let score = 0;
     let scoreElem = document.getElementsByTagName('h3');
-    board.classList.add('game-list');
-
-    //generate cards
     const cards = [...GAME_OPTIONS.cards, ...GAME_OPTIONS.cards];
-    cards.sort(function() { 
-        return 0.5 - Math.random();
-    });
+    let board = document.createElement('div');
+    board.classList.add('game-list');
 
     // make grid
     const generateBoard = (e) => {
@@ -53,6 +48,10 @@
     }
 
     const generateBoardItems = () => {
+        cards.sort(function() { 
+            return 0.5 - Math.random();
+        });
+
         for (let i = 0; i < GAME_OPTIONS.number_of_cards; i++) {
             let item = document.createElement('div');
             item.classList.add('game-list__item');
