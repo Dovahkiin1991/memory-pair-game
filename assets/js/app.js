@@ -5,27 +5,27 @@
         cards : [
             {
                 title: 'type1',
-                src: '/assets/img/type1.jpg'
+                src: './assets/img/type1.jpg'
             },
             {
                 title: 'type2',
-                src: '/assets/img/type2.jpg'
+                src: './assets/img/type2.jpg'
             },
             {
                 title: 'type3',
-                src: '/assets/img/type3.jpg'
+                src: './assets/img/type3.jpg'
             },
             {
                 title: 'type4',
-                src: '/assets/img/type4.jpg'
+                src: './assets/img/type4.jpg'
             },
             {
                 title: 'type5',
-                src: '/assets/img/type5.jpg'
+                src: './assets/img/type5.jpg'
             },
             {
                 title: 'type6',
-                src: '/assets/img/type6.jpg'
+                src: './assets/img/type6.jpg'
             }
         ]
     }
